@@ -11,14 +11,17 @@ class Node:
     self.link_node = link_node
     
   def get_next_node(self):
-    return hex(id(self.link_node))
+    return (self.link_node)
 
-a = Node(5)
-b = Node(10, a)
-c = Node(20, b)
-d = Node(30, a)
+# Add your code below:
+yacko = Node("likes to yak")
+wacko = Node("has a penchant for hoarding snacks")
+dot = Node("enjoys spending time in movie lots")
 
-values = [a, b, c, d]
+yacko.set_next_node(dot)
+dot.set_next_node(wacko)
 
-for value in values:
-  print(value.get_value(), value.get_next_node())
+dots_data = yacko.get_next_node().get_next_node().get_value()
+wackos_data = dot.get_value()
+print(dots_data) 
+print(wackos_data)
